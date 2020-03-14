@@ -12,6 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { WeatherDisplayComponent } from './components/weather-display/weather-display.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     AppComponent,
     SearchComponent,
     MainWrapperComponent,
-    ProgressSpinnerComponent
+    ProgressSpinnerComponent,
+    WeatherDisplayComponent
   ],
   imports: [
     BrowserModule,

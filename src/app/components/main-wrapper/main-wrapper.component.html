@@ -1,2 +1,3 @@
-<app-search></app-search>
-<app-progress-spinner></app-progress-spinner>
+<app-search *ngIf="!visableStateSpinner"></app-search>
+<app-progress-spinner *ngIf="visableStateSpinner"></app-progress-spinner>
+<app-weather-display *ngIf="!visableStateSpinner"></app-weather-display>
