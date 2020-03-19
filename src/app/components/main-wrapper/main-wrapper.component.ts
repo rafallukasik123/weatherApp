@@ -41,6 +41,9 @@ export class MainWrapperComponent implements OnInit {
           this.visableStateSpinner = false;
         },
         err => console.log('HTTP Error', err));
+    }).catch(err => {
+      console.log(err);
+      this.openErrorModal(err.message);
     });
   }
 
@@ -54,7 +57,7 @@ export class MainWrapperComponent implements OnInit {
         },
         err => {
           console.log('HTTP Error', err);
-          this.openErrorModal(err);
+          this.openErrorModal(err.error.message);
         }
       );
     });
@@ -82,7 +85,7 @@ export class MainWrapperComponent implements OnInit {
   }
 
   openErrorModal(err) {
-    this.error = err.error.message;
+    this.error = err;
     this.errorMessage = true;
     setTimeout(() => {
       this.errorMessage = false;

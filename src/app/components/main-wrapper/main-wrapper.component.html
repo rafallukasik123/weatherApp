@@ -1,4 +1,4 @@
 <app-search *ngIf="!visableStateSpinner&&!errorMessage"></app-search>
 <app-progress-spinner *ngIf="visableStateSpinner&&!errorMessage"></app-progress-spinner>
-<app-weather-display [weatherData]="weatherData"  *ngIf="!visableStateSpinner&&!errorMessage" class="app-weather-display"></app-weather-display>
+<app-weather-display [weatherData]="weatherData"  *ngIf="!visableStateSpinner&&!errorMessage&&weatherData!=null" class="app-weather-display"></app-weather-display>
 <app-error-message *ngIf="errorMessage" [error]="error" ></app-error-message>
