@@ -11,7 +11,7 @@ export class MainService {
   private subject = new Subject<any>();
   private dataSubject = new Subject<any>();
   constructor(private http: HttpClient) {
-  this.endpointAddreas = 'http://api.openweathermap.org';
+  this.endpointAddreas = 'https://api.openweathermap.org';
   this.key = '10d35fcce7c02936d78262262d8ebda4';
   }
 
