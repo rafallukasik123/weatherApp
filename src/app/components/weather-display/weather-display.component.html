@@ -1,1 +1,18 @@
-<p>weather-display works!</p>
+<div class="weather-display" >
+  <header><span>{{weatherData?.cityName}} </span> <span>{{weatherData?.countryName}}</span></header>
+  <main>
+    <div class="wrapper-data" *ngFor="let el of weatherData?.weather">
+        <div class="arrangementElements">
+          <img src="{{'http://openweathermap.org/img/w/' + el.icon + '.png'}}" alt="icon">
+          <span>{{el.temp | temperatureConverter : 'K'}}  &#8451;</span>
+          <span>{{el.name}}</span>
+
+        </div>
+        <div class="arrangementElements">
+          <span>{{el.description}}</span>
+          <span>{{el.date | date :'short'}}</span>
+        </div>
+    </div>
+
+  </main>
+</div>

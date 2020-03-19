@@ -10,7 +10,8 @@ import {WeatherData} from '../../interfaces/weather-data';
 export class MainWrapperComponent implements OnInit {
   subscription: Subscription;
   weatherDataSubscription: Subscription;
-  private visableStateSpinner: boolean;
+   visableStateSpinner: boolean;
+  weatherData: WeatherData;
   constructor(private mainService: MainService) {
     this.visableStateSpinner = false;
   }
@@ -18,6 +19,14 @@ export class MainWrapperComponent implements OnInit {
     setTimeout(() => {this.visableStateSpinner = true; }, 10)
     this.setDataByGeographicCoordinates();
     this.setDataByCityName();
+    this.getWeatherData();
+  }
+
+  getWeatherData() {
+    this.weatherDataSubscription = this.mainService.getWeatherData().subscribe(res => {
+      this.weatherData = res;
+      console.log(res);
+    });
   }
 
   setDataByGeographicCoordinates() {
@@ -63,7 +72,6 @@ export class MainWrapperComponent implements OnInit {
     };
    // console.log(weatherDataObject);
     this.mainService.setWeatherData(weatherDataObject);
-
   }
 
 

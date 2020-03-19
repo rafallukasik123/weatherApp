@@ -2,5 +2,12 @@ app-search{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5em;
+  padding: 4em;
+}
+app-weather-display{
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
 }

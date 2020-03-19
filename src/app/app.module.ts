@@ -13,6 +13,7 @@ import { ProgressSpinnerComponent } from './components/progress-spinner/progress
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { WeatherDisplayComponent } from './components/weather-display/weather-display.component';
+import { TemperatureConverterPipe } from './pipes/temperature-converter.pipe';
 
 
 
@@ -22,7 +23,8 @@ import { WeatherDisplayComponent } from './components/weather-display/weather-di
     SearchComponent,
     MainWrapperComponent,
     ProgressSpinnerComponent,
-    WeatherDisplayComponent
+    WeatherDisplayComponent,
+    TemperatureConverterPipe
   ],
   imports: [
     BrowserModule,
