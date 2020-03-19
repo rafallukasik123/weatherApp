@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { WeatherDisplayComponent } from './components/weather-display/weather-display.component';
 import { TemperatureConverterPipe } from './pipes/temperature-converter.pipe';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 
 
@@ -24,7 +25,8 @@ import { TemperatureConverterPipe } from './pipes/temperature-converter.pipe';
     MainWrapperComponent,
     ProgressSpinnerComponent,
     WeatherDisplayComponent,
-    TemperatureConverterPipe
+    TemperatureConverterPipe,
+    ErrorMessageComponent
   ],
   imports: [
     BrowserModule,

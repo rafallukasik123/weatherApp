@@ -12,8 +12,11 @@ export class MainWrapperComponent implements OnInit {
   weatherDataSubscription: Subscription;
    visableStateSpinner: boolean;
   weatherData: WeatherData;
+  errorMessage: boolean;
+  error: string;
   constructor(private mainService: MainService) {
     this.visableStateSpinner = false;
+    this.errorMessage = false;
   }
   ngOnInit(): void {
     setTimeout(() => {this.visableStateSpinner = true; }, 10)
@@ -49,7 +52,11 @@ export class MainWrapperComponent implements OnInit {
           this.setDataWeather(res);
           this.visableStateSpinner = false;
         },
-        err => console.log('HTTP Error', err));
+        err => {
+          console.log('HTTP Error', err);
+          this.openErrorModal(err);
+        }
+      );
     });
   }
 
@@ -72,6 +79,15 @@ export class MainWrapperComponent implements OnInit {
     };
    // console.log(weatherDataObject);
     this.mainService.setWeatherData(weatherDataObject);
+  }
+
+  openErrorModal(err) {
+    this.error = err.error.message;
+    this.errorMessage = true;
+    setTimeout(() => {
+      this.errorMessage = false;
+      this.visableStateSpinner = false;
+    }, 4000);
   }
 
 

@@ -11,3 +11,20 @@ app-weather-display{
   -webkit-box-align: center;
   align-items: center;
 }
+
+app-error-message{
+  color: #D8000C;
+  background-color: #FFD2D2;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 1em; */
+  border-radius: 1em;
+  padding: 0.4em;
+  position: absolute;
+  top: 20%;
+  width: 80%;
+  left: 10%;
+}
